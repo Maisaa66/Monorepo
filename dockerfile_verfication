@@ -19,10 +19,11 @@ COPY package-lock.json package-lock.json
 copy webpackbase.config.js webpackbase.config.js
 COPY lerna.json lerna.json
 COPY README.md README.md
+COPY packages packages
+
 
 RUN npm install --legacy-peer-deps
 
-COPY packages packages
 
 
 CMD ["tail", "-f", "/dev/null"]

@@ -1,18 +1,14 @@
 FROM alpine:3.17
 
-RUN apk update
-RUN apk add bash
+RUN apk update && apk add bash
 
 WORKDIR /tmp
-RUN mkdir -p /.cache/yarn
-RUN mkdir -p /.yarn
+
 RUN wget https://nodejs.org/dist/v18.12.1/node-v18.12.1-linux-x64.tar.xz
 RUN tar -xf node-v18.12.1-linux-x64.tar.xz --directory=/usr/local --strip-components=1
 RUN rm node-v18.12.1-linux-x64.tar.xz
 
 RUN apk add npm
-RUN npm install -g npm
-RUN npm install -g yarn
 
 SHELL [ "/bin/bash", "-c" ]
 
@@ -21,13 +17,12 @@ WORKDIR /xui/common
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 copy webpackbase.config.js webpackbase.config.js
-COPY README.md README.md
 COPY lerna.json lerna.json
-
+COPY README.md README.md
 
 RUN npm install --legacy-peer-deps
 
 COPY packages packages
 
-# Make a command to keep the container running when started.
+
 CMD ["tail", "-f", "/dev/null"]

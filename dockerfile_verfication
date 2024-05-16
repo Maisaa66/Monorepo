@@ -19,12 +19,12 @@ SHELL [ "/bin/bash", "-c" ]
 WORKDIR /xui/common
 
 COPY package.json package.json
-COPY .eslintignore .eslintignore
-COPY .eslintrc.js .eslintrc.js
-COPY tsconfig.json tsconfig.json
-copy webpack.config.js webpack.config.js
+COPY package-lock.json package-lock.json
+copy webpackbase.config.js webpackbase.config.js
 COPY babel.config.js babel.config.js 
 COPY README.md README.md
+COPY lerna.json lerna.json
+
 
 RUN npm install --legacy-peer-deps
 

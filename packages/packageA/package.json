@@ -50,5 +50,5 @@
   },
    "publishConfig": {
     "access": "restricted",
-   "registry": "http://192.168.1.12:4873/"  }
+   "registry": "http://192.168.1.35:4873/"  }
 }

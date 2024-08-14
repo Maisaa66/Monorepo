@@ -50,5 +50,5 @@
   },
    "publishConfig": {
     "access": "restricted",
-   "registry": "http://172.24.160.1:4873/"  }
+   "registry": "http://172.27.240.1:4873/"  }
 }

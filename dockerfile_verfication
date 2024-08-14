@@ -1,5 +1,5 @@
 FROM alpine:3.17
-
+ARG NPM_REGISTRY
 RUN apk update && apk add bash
 
 WORKDIR /tmp
@@ -21,9 +21,8 @@ COPY lerna.json lerna.json
 COPY README.md README.md
 COPY packages packages
 
-
+RUN npm config set $NPM_REGISTRY
 RUN npm install --legacy-peer-deps
-
 
 
 CMD ["tail", "-f", "/dev/null"]

@@ -1,6 +1,6 @@
 {
   "name": "@package-a/b",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "dependencies": {
     "css-loader": "^6.8.1",
     "postcss-loader": "^7.3.3",

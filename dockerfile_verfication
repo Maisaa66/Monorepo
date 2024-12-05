@@ -21,7 +21,7 @@ COPY lerna.json lerna.json
 COPY README.md README.md
 COPY packages packages
 
-RUN node-v
+RUN node -v
 RUN npm config set $NPM_REGISTRY
 RUN npm install --legacy-peer-deps
 

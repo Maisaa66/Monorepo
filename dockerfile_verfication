@@ -12,6 +12,9 @@ RUN apk add npm
 
 RUN node -v
 
+# Set up the environment
+ENV PATH="/usr/local/bin:${PATH}"
+
 SHELL [ "/bin/bash", "-c" ]
 
 WORKDIR /xui/common
